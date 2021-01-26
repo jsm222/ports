@@ -1,0 +1,20 @@
+--- arch/arm/dts/rk3399.dtsi.orig	2021-01-26 05:44:57.157906000 +0100
++++ arch/arm/dts/rk3399.dtsi	2021-01-26 05:45:19.718600000 +0100
+@@ -1353,7 +1353,7 @@
+ 		#clock-cells = <1>;
+ 		#reset-cells = <1>;
+ 		assigned-clocks =
+-			<&cru PLL_GPLL>, <&cru PLL_CPLL>,
++			<&cru PLL_GPLL>,
+ 			<&cru PLL_NPLL>,
+ 			<&cru ACLK_PERIHP>, <&cru HCLK_PERIHP>,
+ 			<&cru PCLK_PERIHP>,
+@@ -1364,7 +1364,7 @@
+ 			<&cru ACLK_GIC_PRE>,
+ 			<&cru PCLK_DDR>;
+ 		assigned-clock-rates =
+-			 <594000000>,  <800000000>,
++			 <594000000>,
+ 			<1000000000>,
+ 			 <150000000>,   <75000000>,
+ 			  <37500000>,
