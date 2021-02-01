@@ -1,5 +1,5 @@
---- arch/arm/dts/rk3399-pinebook-pro.dts.orig	2020-06-13 15:30:50.188477000 +0000
-+++ arch/arm/dts/rk3399-pinebook-pro.dts	2020-06-13 15:31:39.841814000 +0000
+--- arch/arm/dts/rk3399-pinebook-pro.dts.orig	2021-02-01 16:47:57.827595000 +0100
++++ arch/arm/dts/rk3399-pinebook-pro.dts	2021-02-01 16:48:14.627496000 +0100
 @@ -290,7 +290,7 @@
  		pinctrl-names = "default";
  		pinctrl-0 = <&lcdvcc_en_gpio>;
@@ -9,3 +9,34 @@
  		regulator-min-microvolt = <3300000>;
  		regulator-max-microvolt = <3300000>;
  		regulator-enable-ramp-delay = <100000>;
+@@ -890,6 +890,30 @@
+ 			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
++};
++&cru{ 
++	 assigned-clocks =
++		<&cru PLL_GPLL>, <&cru PLL_CPLL>,
++		<&cru PLL_NPLL>,
++		<&cru ACLK_PERIHP>, <&cru HCLK_PERIHP>,
++		<&cru PCLK_PERIHP>,
++		<&cru ACLK_PERILP0>, <&cru HCLK_PERILP0>,
++		<&cru PCLK_PERILP0>, <&cru ACLK_CCI>,
++		<&cru HCLK_PERILP1>, <&cru PCLK_PERILP1>,
++		<&cru ACLK_VIO>, <&cru ACLK_HDCP>,
++		<&cru ACLK_GIC_PRE>,
++		<&cru PCLK_DDR>,<&cru ACLK_VOP1>;
++	assigned-clock-rates=
++		 <594000000>,  <800000000>,
++		<1000000000>,
++		 <150000000>,   <75000000>,
++	 	 <37500000>,
++	 	<100000000>,  <100000000>,
++	 	 <50000000>, <600000000>,
++	 	<100000000>,   <50000000>,
++	 	<400000000>, <400000000>,
++	 	<200000000>,
++	 	<200000000>, <594000000>;
+ };
+ 
+ &pmu_io_domains {
